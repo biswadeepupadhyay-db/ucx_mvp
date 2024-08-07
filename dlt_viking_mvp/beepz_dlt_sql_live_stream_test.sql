@@ -4,7 +4,7 @@ AS SELECT
   *
 FROM
   STREAM read_files(
-    'dbfs:/FileStore/beepz/ingestion/source_data_emp.csv',
+    'dbfs:/FileStore/beepz/ingestion/',
     format => 'csv',
     header => true,
     sep => ',',
