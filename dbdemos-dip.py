@@ -12,4 +12,12 @@ dbdemos.install('lakehouse-retail-c360', catalog='main', schema='dbdemos_retail_
 
 # COMMAND ----------
 
+dbdemos.list_demos()
+
+# COMMAND ----------
+
+dbdemos.install('llm-rag-chatbot', catalog='main', schema='rag_chatbot')
+
+# COMMAND ----------
+
 
