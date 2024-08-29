@@ -5,7 +5,7 @@ import requests
 
 # COMMAND ----------
 
-dbutils.widgets.text("workspace_url", "https://adb-4399380626557544.4.azuredatabricks.net/", "Databricks Workspace URL.")
+dbutils.widgets.text("workspace_url", "https://one-env-beepz-mvp.cloud.databricks.com/", "Databricks Workspace URL.")
 dbutils.widgets.text("access_token", "", "Secure Access Token for APIs.")
 
 # COMMAND ----------
@@ -21,14 +21,14 @@ payload1 = {
     "schemas": [
     "urn:ietf:params:scim:schemas:core:2.0:Group"
   ],
-    "displayName" : "beepz-viking-live"
+    "displayName" : "beepz_group_live"
 }
 
 payload2 = {
     "schemas": [
     "urn:ietf:params:scim:schemas:core:2.0:Group"
   ],
-    "displayName" : "beepz-viking-stream"
+    "displayName" : "beepz_group_stream"
 }
 
 headers = {
@@ -39,7 +39,7 @@ headers = {
 # COMMAND ----------
 
 
-payload_json = json.dumps(payload2)
+payload_json = json.dumps(payload1)
 response = requests.post(url, headers=headers, data=payload_json)
 
 # COMMAND ----------
