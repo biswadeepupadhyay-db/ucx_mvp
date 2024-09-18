@@ -1,5 +1,5 @@
 -- Databricks notebook source
-CREATE OR REFRESH LIVE TABLE ratings_bronze
+CREATE OR REFRESH MATERIALIZED VIEW ratings_bronze
 AS SELECT
   *
 FROM
@@ -13,7 +13,7 @@ FROM
 
 -- COMMAND ----------
 
-CREATE OR REFRESH LIVE TABLE ratings_silver
+CREATE OR REFRESH MATERIALIZED VIEW ratings_silver
 AS SELECT
   *
 FROM LIVE.ratings_bronze

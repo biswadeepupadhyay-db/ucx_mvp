@@ -1,5 +1,5 @@
 -- Databricks notebook source
-CREATE OR REFRESH STREAMING LIVE TABLE reviews_bronze_v2
+CREATE OR REFRESH STREAMING TABLE reviews_bronze
 AS SELECT
   *
 FROM
@@ -12,8 +12,8 @@ FROM
 
 -- COMMAND ----------
 
-CREATE OR REFRESH STREAMING LIVE TABLE reviews_silver_v2
+CREATE OR REFRESH STREAMING TABLE reviews_silver
 AS SELECT
   *
-FROM STREAM(LIVE.reviews_bronze_v2)
+FROM STREAM(LIVE.reviews_bronze)
 where rating > 1.0
